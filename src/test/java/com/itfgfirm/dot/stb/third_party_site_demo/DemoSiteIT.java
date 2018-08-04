@@ -33,8 +33,8 @@ public class DemoSiteIT {
 	}
 	
 	@Test
-	public void getHelloTest() {
+	public void getIndexTest() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
-		assertEquals(response.getBody(), "Hello World!");
+		assertTrue(response.getBody().contains("Get your greeting"));
 	}
 }

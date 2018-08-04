@@ -1,7 +1,6 @@
 package com.itfgfirm.dot.stb.third_party_site_demo;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.hamcrest.Matchers.*;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,7 +22,6 @@ public class DemoSiteTest {
 
 	@Test
 	public void indexTest() throws Exception {
-		mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_PLAIN)).andExpect(status().isOk())
-				.andExpect(content().string(equalTo("Hello World!")));
+		mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_HTML)).andExpect(status().isOk());
 	}
 }
